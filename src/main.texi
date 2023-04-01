@@ -25,7 +25,7 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 @contents
 
 @node Top
-@top Athene Assembly
+@top Athena Assembly
 
 @menu
 * Registers:: describes the format for the general registers.
