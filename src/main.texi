@@ -1,0 +1,117 @@
+\input texinfo
+@settitle Athena Assembly Programmer's Manual
+@documentlanguage en
+@dircategory Software development
+
+@copying
+Copyright @copyright{} 2023 d0p1
+
+@quotation
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+@end quotation
+@end copying
+
+@titlepage
+@title Athena Assembly Programmer's Manual
+@author d0p1
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@node Top
+@top Athene Assembly
+
+@menu
+* Registers:: describes the format for the general registers.
+* Addressing:: describes how addressing works.
+* Exceptions:: describes exceptions.
+* Instruction Set:: descripbes ISA
+* Pseudo Op-Codes:: describes the assembler's pseudo-operations.
+* Index:: Complete index.
+@end menu
+
+@node Registers
+@chapter Registers
+@cindex chapter, registers
+
+Registers are big endian
+
+@node General Registers
+@section General Registers
+
+@multitable @columnfractions .15 .15 .60
+@headitem Name @tab Alt-name @tab Use and Linkage
+@item r0
+@tab zero
+@tab Always zero (hardwired)
+@item r1 - r8
+@tab a0 - a7
+@tab Used to pass the first 7 words arguments. Their values are not preserved across procedure call.
+@item r9 - r10
+@tab v0 - v1
+@tab Used for expression evaluations and to hold function results.
+@item r11 - r17
+@tab s0 - s6
+@tab Saved registers; Their values must be preserved across procedure calls.
+@item r18 - r24
+@tab t0 - t6
+@tab Temporary registers; Their values aren't preserved across procedure calls.
+@item r25 - r26
+@tab k0 - k1
+@tab Reserved for the OS kernel
+@item r27
+@tab at
+@tab Reserved for the assembler
+@item r28
+@tab sp
+@tab Contains the stack pointer
+@item r29
+@tab gp
+@tab Contains the global pointer
+@item r30
+@tab fp
+@tab Contains the frame pointer (if needed); itherwise it's a saved registers (like s0-s6)
+@item r31
+@tab ra
+@tab Contains the return address
+@end multitable
+
+@node Addressing
+@chapter Addressing
+
+TODO
+
+@node Exceptions
+@chapter Exceptions
+
+TODO
+
+@node Instruction Set
+@chapter Instruction Set
+
+
+@node Pseudo Op-Codes
+@chapter Pseudo Op-Codes
+
+TODO
+
+@node Pseudo Instruction
+@chapter Pseudo Instruction
+
+@multitable @columnfractions .25 .25 .50
+@headitem Pseudo Instruction @tab Base Instruction(s) @tab Description
+@item @code{nop}
+@tab @code{add r0, r0, r0}
+@tab No-Op
+@end multitable
+
+@node Index
+@unnumbered Index
+@printindex cp
+@bye
