@@ -58,7 +58,18 @@ Next: <a href="Index.html" accesskey="n" rel="next">Index</a>, Previous: <a href
 
 <table>
 <thead><tr><th width="25%">Pseudo Instruction</th><th width="25%">Base Instruction(s)</th><th width="50%">Description</th></tr></thead>
+<tr><td width="25%"><code>b offset</code></td><td width="25%"><code>beq r0, r0, offset</code></td><td width="50%">Unconditional branch</td></tr>
+<tr><td width="25%"><code>beqz ra, offset</code></td><td width="25%"><code>beq ra, r0, offset</code></td><td width="50%">Branch if not zero</td></tr>
+<tr><td width="25%"><code>la rd, label</code></td><td width="25%"><code>ori rd, r0, label</code></td><td width="50%">Load address (if address is &lt; 0xFFFF)</td></tr>
+<tr><td width="25%"><code>la rd, label</code></td><td width="25%"><code>lih at, %hi(label)</code>
+      <br><code>ori rd, at, %low(label)</code></td><td width="50%">Load address into register</td></tr>
+<tr><td width="25%"><code>li rd, imm</code></td><td width="25%"><code>ori rd, r0, imm</code></td><td width="50%">Load immediat (if imm is &lt; 0xFFFF)</td></tr>
+<tr><td width="25%"><code>li rd, imm</code></td><td width="25%"><code>lih at, %hi(imm)</code>
+      <br><code>ori rd, at, %low(imm)</code></td><td width="50%">Load immediat into register</td></tr>
 <tr><td width="25%"><code>nop</code></td><td width="25%"><code>add r0, r0, r0</code></td><td width="50%">No-Op</td></tr>
+<tr><td width="25%"><code>swap ra, rb</code></td><td width="25%"><code>xor ra, ra, rb</code>
+     <br><code>xor rb, ra, rb</code>
+     <br><code>xor ra, ra, rb</code></td><td width="50%">XOR swap between two registers</td></tr>
 </table>
 
 </div>
