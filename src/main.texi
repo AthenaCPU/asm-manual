@@ -107,9 +107,43 @@ TODO
 
 @multitable @columnfractions .25 .25 .50
 @headitem Pseudo Instruction @tab Base Instruction(s) @tab Description
+@item @code{b offset}
+@tab @code{beq r0, r0, offset}
+@tab Unconditional branch
+
+@item @code{beqz ra, offset}
+@tab @code{beq ra, r0, offset}
+@tab Branch if not zero
+
+@item @code{la rd, label}
+@tab  @code{ori rd, r0, label}
+@tab  Load address (if address is < 0xFFFF)
+
+@item @code{la rd, label}
+@tab  @code{lih at, %hi(label)}
+      @*@code{ori rd, at, %low(label)}
+@tab Load address into register
+
+@item @code{li rd, imm}
+@tab  @code{ori rd, r0, imm}
+@tab  Load immediat (if imm is < 0xFFFF)
+
+@item @code{li rd, imm}
+@tab  @code{lih at, %hi(imm)}
+      @*@code{ori rd, at, %low(imm)}
+@tab Load immediat into register
+
+
 @item @code{nop}
 @tab @code{add r0, r0, r0}
 @tab No-Op
+
+@item @code{swap ra, rb}
+@tab @code{xor ra, ra, rb}
+     @*@code{xor rb, ra, rb}
+     @*@code{xor ra, ra, rb}
+@tab XOR swap between two registers
+
 @end multitable
 
 @node Index
