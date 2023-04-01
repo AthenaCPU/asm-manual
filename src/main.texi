@@ -42,8 +42,9 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 
 Registers are big endian
 
-@node General Registers
-@section General Registers
+@node General Purpose Registers
+@section General Purpose Registers
+@cindex section, general purpose registers
 
 @multitable @columnfractions .15 .15 .60
 @headitem Name @tab Alt-name @tab Use and Linkage
