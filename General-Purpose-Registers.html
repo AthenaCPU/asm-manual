@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- Created by GNU Texinfo 6.8, https://www.gnu.org/software/texinfo/ -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- Copyright (C) 2023 d0p1
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. -->
+<title>General Purpose Registers (Athena Assembly Programmer&rsquo;s Manual)</title>
+
+<meta name="description" content="General Purpose Registers (Athena Assembly Programmer&rsquo;s Manual)">
+<meta name="keywords" content="General Purpose Registers (Athena Assembly Programmer&rsquo;s Manual)">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2any">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="index.html" rel="start" title="Top">
+<link href="Index.html" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="Registers.html" rel="up" title="Registers">
+<style type="text/css">
+<!--
+a.copiable-anchor {visibility: hidden; text-decoration: none; line-height: 0em}
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+span:hover a.copiable-anchor {visibility: visible}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<div class="section" id="General-Purpose-Registers">
+<div class="header">
+<p>
+Up: <a href="Registers.html" accesskey="u" rel="up">Registers</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<span id="General-Purpose-Registers-1"></span><h3 class="section">1.1 General Purpose Registers</h3>
+<span id="index-section_002c-general-purpose-registers"></span>
+
+<table>
+<thead><tr><th width="15%">Name</th><th width="15%">Alt-name</th><th width="60%">Use and Linkage</th></tr></thead>
+<tr><td width="15%">r0</td><td width="15%">zero</td><td width="60%">Always zero (hardwired)</td></tr>
+<tr><td width="15%">r1 - r8</td><td width="15%">a0 - a7</td><td width="60%">Used to pass the first 7 words arguments. Their values are not preserved across procedure call.</td></tr>
+<tr><td width="15%">r9 - r10</td><td width="15%">v0 - v1</td><td width="60%">Used for expression evaluations and to hold function results.</td></tr>
+<tr><td width="15%">r11 - r17</td><td width="15%">s0 - s6</td><td width="60%">Saved registers; Their values must be preserved across procedure calls.</td></tr>
+<tr><td width="15%">r18 - r24</td><td width="15%">t0 - t6</td><td width="60%">Temporary registers; Their values aren&rsquo;t preserved across procedure calls.</td></tr>
+<tr><td width="15%">r25 - r26</td><td width="15%">k0 - k1</td><td width="60%">Reserved for the OS kernel</td></tr>
+<tr><td width="15%">r27</td><td width="15%">at</td><td width="60%">Reserved for the assembler</td></tr>
+<tr><td width="15%">r28</td><td width="15%">sp</td><td width="60%">Contains the stack pointer</td></tr>
+<tr><td width="15%">r29</td><td width="15%">gp</td><td width="60%">Contains the global pointer</td></tr>
+<tr><td width="15%">r30</td><td width="15%">fp</td><td width="60%">Contains the frame pointer (if needed); itherwise it&rsquo;s a saved registers (like s0-s6)</td></tr>
+<tr><td width="15%">r31</td><td width="15%">ra</td><td width="60%">Contains the return address</td></tr>
+</table>
+
+</div>
+
+
+
+</body>
+</html>
