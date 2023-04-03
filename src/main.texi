@@ -1,6 +1,8 @@
 \input texinfo
+@documentencoding UTF-8
 @settitle Athena Assembly Programmer's Manual
 @documentlanguage en
+@syncodeindex pg cp
 @dircategory Software development
 
 @copying
@@ -52,33 +54,43 @@ Registers are big endian
 @item r0
 @tab zero
 @tab Always zero (hardwired)
+
 @item r1 - r8
 @tab a0 - a7
 @tab Used to pass the first 7 words arguments. Their values are not preserved across procedure call.
+
 @item r9 - r10
 @tab v0 - v1
 @tab Used for expression evaluations and to hold function results.
+
 @item r11 - r17
 @tab s0 - s6
 @tab Saved registers; Their values must be preserved across procedure calls.
+
 @item r18 - r24
 @tab t0 - t6
 @tab Temporary registers; Their values aren't preserved across procedure calls.
+
 @item r25 - r26
 @tab k0 - k1
 @tab Reserved for the OS kernel
+
 @item r27
 @tab at
 @tab Reserved for the assembler
+
 @item r28
 @tab sp
 @tab Contains the stack pointer
+
 @item r29
 @tab gp
 @tab Contains the global pointer
+
 @item r30
 @tab fp
 @tab Contains the frame pointer (if needed); itherwise it's a saved registers (like s0-s6)
+
 @item r31
 @tab ra
 @tab Contains the return address
@@ -91,7 +103,16 @@ Registers are big endian
 @node Addressing
 @chapter Addressing
 
-TODO
+@multitable @columnfractions .50 .50
+@headitem Format @tab Address
+
+@item (base register)
+@tab TODO
+
+@item expression
+@tab TODO
+
+@end multitable
 
 @node Exceptions
 @chapter Exceptions
@@ -106,7 +127,7 @@ TODO
 @chapter Pseudo Op-Codes
 @cindex chapter, pseudo op-codes
 
-@multitable @columnfractions .15 .15 .60
+@multitable @columnfractions .15 .35 .50
 @headitem Directive @tab Arguments @tab Description
 @item @code{.align}
 @tab integer
@@ -125,7 +146,7 @@ TODO
 @tab TODO
 
 @item @code{.section}
-@tab [.text,.data,.rodata,.bss]
+@tab @{.text,.data,.rodata,.bss@}
 @tab TODO
 
 @item @code{.string}
@@ -150,7 +171,7 @@ TODO
 
 @item @code{.word}
 @tab expression [, expression]*
-@tab 32-bit comma separated wordsTODO
+@tab 32-bit comma separated words
 
 @item @code{.long}
 @tab expression [, expression]*
@@ -210,6 +231,11 @@ TODO
 @tab XOR swap between two registers
 
 @end multitable
+
+@node GNU Free Documentation License
+@appendix GNU Free Documentation License
+
+@include fdl.texi
 
 @node Index
 @unnumbered Index
