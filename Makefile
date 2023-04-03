@@ -5,7 +5,7 @@ all: pdf www
 pdf: asm-manual.pdf
 
 www: src/main.texi
-	texi2any -o $@ --html $^
+	texi2any -o $@ --html $^ 
 
 asm-manual.pdf: src/main.texi
 	texi2dvi -o $@ -p $^

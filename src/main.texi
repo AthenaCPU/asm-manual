@@ -33,6 +33,7 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 * Exceptions:: describes exceptions.
 * Instruction Set:: descripbes ISA
 * Pseudo Op-Codes:: describes the assembler's pseudo-operations.
+* Pseudo Instructions:: describes the assembler's pseudo-instructions.
 * Index:: Complete index.
 @end menu
 
@@ -83,6 +84,10 @@ Registers are big endian
 @tab Contains the return address
 @end multitable
 
+@node Special Purpose Registers
+@section Special Purpose Registers
+@cindex section, special purpose registers
+
 @node Addressing
 @chapter Addressing
 
@@ -99,11 +104,67 @@ TODO
 
 @node Pseudo Op-Codes
 @chapter Pseudo Op-Codes
+@cindex chapter, pseudo op-codes
 
-TODO
+@multitable @columnfractions .15 .15 .60
+@headitem Directive @tab Arguments @tab Description
+@item @code{.align}
+@tab integer
+@tab TODO
 
-@node Pseudo Instruction
-@chapter Pseudo Instruction
+@item @code{.file}
+@tab "filename"
+@tab TODO
+
+@item @code{.globl}
+@tab symbol_name
+@tab TODO
+
+@item @code{.local}
+@tab symbol_name
+@tab TODO
+
+@item @code{.section}
+@tab [.text,.data,.rodata,.bss]
+@tab TODO
+
+@item @code{.string}
+@tab "string"
+@tab TODO
+
+@item @code{.asciz}
+@tab "string"
+@tab TODO
+
+@item @code{.byte}
+@tab expression [, expression]*
+@tab 8-bit comma separated words
+
+@item @code{.half}
+@tab expression [, expression]*
+@tab 16-bit comma separated words
+
+@item @code{.short}
+@tab expression [, expression]*
+@tab 16-bit comma separated words
+
+@item @code{.word}
+@tab expression [, expression]*
+@tab 32-bit comma separated wordsTODO
+
+@item @code{.long}
+@tab expression [, expression]*
+@tab 32-bit comma separated words
+
+@item @code{.quad}
+@tab expression [, expression]*
+@tab 64-bit comma separated words
+
+@end multitable
+
+@node Pseudo Instructions
+@chapter Pseudo Instructions
+@cindex chapter, pseudo instructions
 
 @multitable @columnfractions .25 .25 .50
 @headitem Pseudo Instruction @tab Base Instruction(s) @tab Description
@@ -137,6 +198,10 @@ TODO
 @item @code{nop}
 @tab @code{add r0, r0, r0}
 @tab No-Op
+
+@item @code{ret}
+@tab  @code{TODO}
+@tab Subroutine return.
 
 @item @code{swap ra, rb}
 @tab @code{xor ra, ra, rb}
