@@ -112,6 +112,12 @@ Registers are big endian
 @item expression
 @tab TODO
 
+@item expression (base register)
+@tab TODO
+
+@item relocatable-symbol
+@tab TODO
+
 @end multitable
 
 @node Exceptions
@@ -133,6 +139,34 @@ TODO
 @tab integer
 @tab TODO
 
+@item @code{.ascii}
+@tab string [,string]...
+@tab TODO
+
+@item @code{.asciiz}
+@tab string [,string]...
+@tab TODO
+
+@item @code{.bss}
+@tab 
+@tab TODO
+
+@item @code{.byte}
+@tab expression [, expression]*
+@tab 8-bit comma separated words
+
+@item @code{.data}
+@tab 
+@tab TODO
+
+@item @code{.dword}
+@tab expression [, expression]*
+@tab 64-bit comma separated words
+
+@item @code{.extern}
+@tab symbol_name
+@tab TODO
+
 @item @code{.file}
 @tab "filename"
 @tab TODO
@@ -141,45 +175,42 @@ TODO
 @tab symbol_name
 @tab TODO
 
+@item @code{.half}
+@tab expression [, expression]*
+@tab 16-bit comma separated words
+
 @item @code{.local}
 @tab symbol_name
+@tab TODO
+
+@item @code{.long}
+@tab expression [, expression]*
+@tab 32-bit comma separated words
+
+@item @code{.rodata}
+@tab 
 @tab TODO
 
 @item @code{.section}
 @tab @{.text,.data,.rodata,.bss@}
 @tab TODO
 
-@item @code{.string}
-@tab "string"
-@tab TODO
-
-@item @code{.asciz}
-@tab "string"
-@tab TODO
-
-@item @code{.byte}
-@tab expression [, expression]*
-@tab 8-bit comma separated words
-
-@item @code{.half}
-@tab expression [, expression]*
-@tab 16-bit comma separated words
-
 @item @code{.short}
 @tab expression [, expression]*
 @tab 16-bit comma separated words
+
+@item @code{.size}
+@tab name, expression
+@tab TODO
+
+@item @code{.text}
+@tab 
+@tab TODO
 
 @item @code{.word}
 @tab expression [, expression]*
 @tab 32-bit comma separated words
 
-@item @code{.long}
-@tab expression [, expression]*
-@tab 32-bit comma separated words
-
-@item @code{.quad}
-@tab expression [, expression]*
-@tab 64-bit comma separated words
 
 @end multitable
 
